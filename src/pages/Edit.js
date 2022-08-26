@@ -1,14 +1,13 @@
 import React from 'react'
-import { Link} from 'react-router-dom'
 import Navbar from '../components/Navbar'
 
-export default function Add() {
+export default function () {
   return (
     <div>
         <Navbar/>
         <div className='container-add'>
         <form className='form-add'>
-          <div className="h5 mt-4">Tambah Data Baru</div>
+          <div className="h5 mt-4">Edit Data Pribadi</div>
           <div className="mb-3 mt-3">
             <label for="exampleInputEmail1" className="form-label">NIK</label>
             <input 
@@ -70,7 +69,7 @@ export default function Add() {
             </select>
           </div>
           <div className='add-button'>
-            <button type="button" class="btn btn-primary" style={{width: '100px'}}>Simpan</button>
+            <button type="button" class="btn btn-primary" style={{width: '100px'}}>Ubah</button>
             <button type="button" class="btn btn-secondary ml-3" style={{width: '100px'}}>Kembali</button>
           </div>
         </form>

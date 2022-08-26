@@ -37,12 +37,14 @@ export default function Seacrh() {
       <button 
         type="button" 
         class="btn btn-primary ml-3 float-right" 
-        onClick={navigateToAdd}>
+        onClick={navigateToAdd}
+        style={{width: '150px'}}>
           Add
       </button>
       <button 
         type="button" 
-        class="btn btn-primary float-right">
+        class="btn btn-primary float-right"
+        style={{width: '150px'}}>
           Search
       </button>
     </div>

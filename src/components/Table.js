@@ -1,10 +1,14 @@
-import {Table} from 'react-bootstrap'
+import {Table,Button} from 'react-bootstrap'
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import { Link} from 'react-router-dom'
+import DeleteData from "../components/DeleteData";
 
 export default function Tabel() {
   const [state, setState] = useState([]);
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
    // get
    function fetchData() {
@@ -20,6 +24,9 @@ export default function Tabel() {
         console.log('error', err);
       });
   }
+  const handleDelete = () => {
+    handleShow();
+  };
 
   useEffect(() => {
     fetchData();
@@ -27,7 +34,7 @@ export default function Tabel() {
 
   return (
     <div>
-        <table  hover className=' table table-bordered border'>
+        <table  hover className='table table-bordered border'>
           <thead>
             <tr className='bg-table'>
               <th>No</th>
@@ -44,7 +51,7 @@ export default function Tabel() {
           <tbody>         
             <tr>
               <td>1</td>
-              <td>234565666667</td>
+              <td>2345656666</td>
               <td>Yandi Riswandi</td>
               <td>24</td>
               <td>01 Januari 1998</td>
@@ -52,13 +59,23 @@ export default function Tabel() {
               <td>Jl. Babakan Jawa</td>
               <td>Negara</td>
               <td>
-                <Link to="/detail" className='text-warning'>Detail</Link>
-                <Link to="/edit" className='ml-2 text-primary'>Edit</Link>
-                <Link to="/hapus" className='ml-2 text-danger'>Hapus</Link>
+                <Link to="/detail" className='action text-warning'>Detail</Link>
+                <Link to="/edit" className='action ml-2 text-primary'>Edit</Link>
+                <button 
+                  to="/hapus" 
+                  className='action delete-button ml-2 text-danger'
+                  onClick={handleDelete}>
+                    Hapus
+                </button>
               </td>
             </tr>
           </tbody>
         </table>
+        <DeleteData
+        // setConfirmDelete={setConfirmDelete}
+        show={show}
+        handleClose={handleClose}
+        />
     </div>
   )
 }

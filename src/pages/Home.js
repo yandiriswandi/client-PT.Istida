@@ -8,6 +8,7 @@ import {Container,
 import Tabel from '../components/Table'
 import Search from '../components/Search'
 import { useNavigate } from "react-router-dom";
+import Navbar from '../components/Navbar'
 
 function Home() {
 
@@ -21,6 +22,7 @@ function Home() {
     employee: '',
   });
 
+  
   
   const handleChange = (e) => {
     setForm({
@@ -54,7 +56,7 @@ function Home() {
 
   return (
     <Container>
-      <div className="h3 mt-4">Aplikasi Data Pribadi</div>
+      <Navbar/>
       <Search/>
       <Tabel />
     </Container>

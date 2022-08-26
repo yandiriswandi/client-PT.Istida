@@ -4,19 +4,18 @@ import {
   Link,
   useNavigate
 } from "react-router-dom"
+import folder from '../assets/folder.png' // relative path to image 
 
 export default function Nav() {
   return (
     <div>
-    <Navbar className="border-bottom border-dark">
+    <Navbar >
       <Container>
-        <Navbar.Brand  as={Link} to="/home" href="/home">DASHBOARD</Navbar.Brand>
+        <Navbar.Brand  as={Link} to="/" className='h1'>
+          <img src={folder} alt={"logo"} className="image"/>
+          Aplikasi Data Pribadi
+        </Navbar.Brand>
         <Navbar.Toggle />
-        <Navbar.Collapse className="justify-content-end">
-          <Navbar.Text as={Link} to="/" >
-           <a href="#login" className='font-weight-bold'>Logout</a>
-          </Navbar.Text>
-        </Navbar.Collapse>
       </Container>
     </Navbar>
     </div>
